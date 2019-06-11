@@ -1,0 +1,11 @@
+NIKOBIZZ API v1.0.0
+===========================================================================
+client.php  - For creating client applications to nikobizz api
+server.php  - For creating endpoint applications to nikobizz api
+---utils
+	request.php  - processes client application requests. Ensure HOST matches your request origin address
+	security.php - create the security and authentication parameters for the api
+
+server address setup
+
+http://myaddress/server.php
