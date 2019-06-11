@@ -31,7 +31,7 @@ function send_sms($msisdn,$message,$code,$keyword="",$linkid="",$transid="", $sc
 //KEYWORD|LINKID|TRANSACTION_ID|SCHEDULED_SEND are optional
 //A transaction can be referenced using the reference number number which is part of the result or the optional transaction id if was part of the request
 
-$result = send_sms("+2547XXXXXXXX","Hello. This is a test SMS from InterIntel. Please confirm that the SMS Name (ALIAS) is configured correctly. Thank you","ALIAS","","LINKID","MYTRANSID","2014-12-30 23:59:59");
+$result = send_sms("+2547XXXXXXXX","Hello. This is a test SMS from InterIntel. Please confirm that the SMS Name (ALIAS) is configured correctly. Thank you","ALIAS","","LINKID","MYTRANSID","17/09/2016 6:31 am");
 
 print_r($result);
 
