@@ -98,7 +98,7 @@ lng = '0.0';
 <p>payload is the POST data<br />
 <code>sec_hash</code> and <code>credentials</code> are not included in the sec_hash generation</p>
 <p>the payload key values are combined into a string like GET query params 
-e.g</p>
+e.g  </p>
 <pre><code>key1=val1&amp;key2=val2
 </code></pre>
 
@@ -106,6 +106,9 @@ e.g</p>
 <p>the <code>sec_hash</code> is a keyed hash value of the payload string using the HMAC method (sha256) </p>
 <p>base64 decoded <em>API key</em> is the shared secret key used for generating the HMAC variant of the message digest</p>
 <h2 id="endpoints">endpoints</h2>
+<blockquote>
+<p>please note that it must end in a slash</p>
+</blockquote>
 <h3 id="apisend-sms">/api/SEND SMS</h3>
 <h4 id="params">params</h4>
 <ul>
@@ -118,9 +121,6 @@ format = "17/09/2016 6:31 am" (d/m/Y H:M (am/pm))</li>
 </ul>
 <h3 id="apiget-my-host">/api/get-my-host/</h3>
 <p>this is the only endpoint accepting GET</p>
-<blockquote>
-<p>please note that it must end in a slash</p>
-</blockquote>
 <p>the response from this endpoint is what is expected in variable parameters</p>
 <p>sample response</p>
 <pre><code>{
@@ -223,5 +223,5 @@ message accombining the status </li>
 
 <!--
 MkDocs version : 1.0.4
-Build Date UTC : 2019-06-13 09:21:14
+Build Date UTC : 2019-06-13 09:24:34
 -->
