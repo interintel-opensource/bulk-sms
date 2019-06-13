@@ -17,7 +17,8 @@ constants parameters to include in all requests
 ```
 CHID = 4;
 gateway_host = services.interintel.co;
-
+lat = '0.0'
+lng = '0.0'
 ```
 
 api access parameters
@@ -29,12 +30,11 @@ api key
 ```
 variable parameters
 
-```
-timestamp = unix timestamp
-ip_address = HOST;
-lat = '0.0';
-lng = '0.0';
-```
+* timestamp
+ unix timestamp
+
+* ip_address 
+YOUR HOST IP ADDRESS (ipv4|ipv6)
 
 
 ### payload encryption
@@ -68,22 +68,6 @@ the message to send
 * scheduled_send 
 format = "17/09/2016 6:31 am" (d/m/Y H:M (am/pm))
 
-
-### /api/get-my-host/ 
-this is the only endpoint accepting GET
-
-the response from this endpoint is what is expected in variable parameters
-
-sample response
-
-```
-{
-    lat: 1,
-    ip: "196.207.161.192",
-    lng: 38
-}
-
-```
 
 # response 
 the response will contain the following keys
