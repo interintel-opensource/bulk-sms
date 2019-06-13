@@ -76,7 +76,8 @@
 <p>constants parameters to include in all requests</p>
 <pre><code>CHID = 4;
 gateway_host = services.interintel.co;
-
+lat = '0.0'
+lng = '0.0'
 </code></pre>
 
 <p>api access parameters</p>
@@ -87,12 +88,16 @@ api key
 </code></pre>
 
 <p>variable parameters</p>
-<pre><code>timestamp = unix timestamp
-ip_address = HOST;
-lat = '0.0';
-lng = '0.0';
-</code></pre>
-
+<ul>
+<li>
+<p>timestamp
+ unix timestamp</p>
+</li>
+<li>
+<p>ip_address 
+YOUR HOST IP ADDRESS (ipv4|ipv6)</p>
+</li>
+</ul>
 <h3 id="payload-encryption">payload encryption</h3>
 <p>all requests require a <code>sec_hash</code> that can be generated as described below</p>
 <p>payload is the POST data<br />
@@ -119,18 +124,6 @@ the message to send</li>
 <li>scheduled_send 
 format = "17/09/2016 6:31 am" (d/m/Y H:M (am/pm))</li>
 </ul>
-<h3 id="apiget-my-host">/api/get-my-host/</h3>
-<p>this is the only endpoint accepting GET</p>
-<p>the response from this endpoint is what is expected in variable parameters</p>
-<p>sample response</p>
-<pre><code>{
-    lat: 1,
-    ip: &quot;196.207.161.192&quot;,
-    lng: 38
-}
-
-</code></pre>
-
 <h1 id="response">response</h1>
 <p>the response will contain the following keys</p>
 <ul>
@@ -223,5 +216,5 @@ message accombining the status </li>
 
 <!--
 MkDocs version : 1.0.4
-Build Date UTC : 2019-06-13 09:28:09
+Build Date UTC : 2019-06-13 09:45:28
 -->
