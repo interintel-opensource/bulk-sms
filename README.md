@@ -20,7 +20,7 @@ InterIntel Bulk SMS Api
 constants parameters to include in all requests
 
 ```
-CHID = 4;
+CHID = 13;
 gateway_host = services.interintel.co;
 lat = '0.0'
 lng = '0.0'
