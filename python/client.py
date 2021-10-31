@@ -42,6 +42,7 @@ def sendSmsMessages(msid, message='' , code='', keyword="",linkid="",transid="",
     response = make_sms_request(result, 'SEND%20SMS');
     print(response)
 
+
 def createSecurityToken(payload, api_key):
     new_payload = {}
     payload_list = []
