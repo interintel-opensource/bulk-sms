@@ -1,6 +1,7 @@
 <?php
-define ('URL', 'services.interintel.co');
-define ('HOST', '<<YOUR HOST IP ADDRESS (ipv4|ipv6)>>');
+define ('URL', 'nenasasa.com');
+#define ('HOST', '<<YOUR HOST IP ADDRESS (ipv4|ipv6)>>');
+define ('HOST', '127.0.0.1');
 
 function init_payload(){
 	$payload = array();

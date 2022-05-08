@@ -6,7 +6,6 @@ define("API_KEY","<<API_KEY>>");
 define("USERNAME","<<USERNAME>>");
 define("PASSWORD","<<PASSWORD>>");
 
-
 function send_batch_notification($recipients,$message,$code,$keyword="",$linkid="",$transid="", $schedule=""){
 	$payload = init_payload();
 	$credentials = array();
@@ -20,9 +19,11 @@ function send_batch_notification($recipients,$message,$code,$keyword="",$linkid=
 	$payload["ext_outbound_id"] = $transid;
 	$payload["keyword"] = $keyword;
 	$payload["scheduled_send"] = $schedule; // d/m/Y H:M (am/pm)
-	print_r($payload);
+	#print_r($payload);
 	print "";
 	$payload = security($payload, API_KEY);
+
+	print_r($payload);
 	return request($payload, 'SEND%20BATCH%20NOTIFICATION');
 }
 
@@ -40,9 +41,12 @@ function send_sms($msisdn,$message,$code,$keyword="",$linkid="",$transid="", $sc
 	$payload["ext_outbound_id"] = $transid;
 	$payload["keyword"] = $keyword;
 	$payload["scheduled_send"] = $schedule; // d/m/Y H:M (am/pm)
-	print_r($payload);
+
+	#print_r($payload);
+
 	print "";
 	$payload = security($payload, API_KEY);
+	print_r($payload);
 	return request($payload, 'SEND%20SMS');
 }
 
@@ -51,10 +55,8 @@ function send_sms($msisdn,$message,$code,$keyword="",$linkid="",$transid="", $sc
 //SCHEDULED_SEND (format) = "17/09/2016 6:31 am" (d/m/Y H:M (am/pm))
 //KEYWORD|LINKID|TRANSACTION_ID|SCHEDULED_SEND are optional
 //A transaction can be referenced using the reference number number which is part of the result or the optional transaction id if was part of the request
-
-$result = send_batch_notification(array(+2547XXXXXXXX,+2547XXXXXXXX),"Hello. This is a test SMS from InterIntel. Thank you","TEST","","","","");
-
-
+$time_start = microtime(true); 
+//$result = send_batch_notification('2547XXXXXXXX,2547XXXXXXXX',"Hello. This is a test SMS from InterIntel. Thank you","TEST","","","","");
 
 //*************************SEND SMS************************************
 //$result = send_sms(MSISDN,MESSAGE,CODE,KEYWORD,LINKID,TRANSACTION_ID,SCHEDULED_SEND);
@@ -62,10 +64,13 @@ $result = send_batch_notification(array(+2547XXXXXXXX,+2547XXXXXXXX),"Hello. Thi
 //KEYWORD|LINKID|TRANSACTION_ID|SCHEDULED_SEND are optional
 //A transaction can be referenced using the reference number number which is part of the result or the optional transaction id if was part of the request
 
-$result = send_sms("+2547XXXXXXXX","Hello. This is a test SMS from InterIntel. Please confirm that the SMS Name (ALIAS) is configured correctly. Thank you","ALIAS","","LINKID","MYTRANSID","17/09/2016 6:31 am");
+//$result = send_sms("+2547XXXXXXXX","Hello. This is a test SMS from InterIntel. Please confirm that the SMS Name (ALIAS) is configured correctly. Thank you","ALIAS","","LINKID","MYTRANSID","17/09/2016 6:31 am");
 
 print_r($result);
 
+$time_end = microtime(true);
+$execution_time = ($time_end - $time_start);
+echo "\r\nTTL: $execution_time";
 
 ?>
 
